@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body_block %}
+{% load blogapp_tag %}
+
+<div class="home_main">
+  <ul>
+      {% for d in postslist %}
+        <li>
+          <h1 id = "title"><a href="{% url 'post' d.pk %}">{{ d.post_title }}</a></h1>
+        </li>
+        <li>
+          {% if d.post_time != None %}
+            <h4 id = "date">Published On: {{ d.post_time|date:"D M Y" }} </h2>
+          {% endif %}
+        </li>
+        <li>
+          <h4 id = "comment"> Comments: {{ comnt_cnt|get_value:d.pk }} </h4>
+        </li>
+        {% endfor %}
+  </ul>
+
+</div>
+
+{% endblock %}

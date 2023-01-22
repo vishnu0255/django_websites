@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body_block %}
+<ul>
+  <form class="postslist_main" method="post">
+    {% for d in postslist %}
+      <li>
+        <a href="{% url 'postview' d.pk %}">Title:{{ d.post_title }}</a>
+      </li>
+      <li>
+        <h3>
+          Text:{{ d.post_text }}
+        </h3>
+      </li>
+      {% endfor %}
+</ul>
+{% endblock %}

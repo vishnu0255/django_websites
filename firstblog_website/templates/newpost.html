@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body_block %}
+<h1>New Post</h1>
+<form class="new_post_main" action="drafts.html" method="post">
+  {{ newpostform.as_p }}
+  <input type="submit" name="Save" value="save">
+  {% csrf_token %}
+</form>
+{% endblock %}

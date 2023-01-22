@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body_block %}
+<h1>New Comment</h1>
+<form class="new_comment_main" method="post">
+  {{ commentform.as_p }}
+  <input type="submit" name="PostComment" value="Post Comment">
+  {% csrf_token %}
+</form>
+{% endblock %}

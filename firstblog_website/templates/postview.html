@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% load blogapp_tag %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body_block %}
+<ul>
+  {% for d in postview %}
+  <li><h1>Title:{{ d.post_title }}</h1></li>
+  <li><h3>Author:{{ d.post_author }}</h3></li>
+  <li><h3>Text:{{ d.post_text }}</h3></li>
+  <a href="{% url 'editpost' d.pk %}"><button class="btn"><i class="fa fa-edit"></i></button></a>
+  <a href="{% url 'deletepost' d.pk %}"><button class="btn"><i class="fa fa-remove"></i></button></a>
+  {% if comment != None and comment_exists %}
+    {% for c in comment %}
+      <p>{{ c.comment_time|date:"D M Y" }}</p>
+      {% if c.comment_approve == False %}
+        <a href="{% url 'appcomm' c.pk %}"><button class="btn"><i class="fa fa-check"></i></button></a>
+        <a href="{% url 'delcomm' c.pk %}"><button class="btn"><i class="fa fa-remove"></i></button></a>
+      {% endif %}
+      <p>Hey That is a {{ c.post_comments }}</p>
+      <p>Posted by: {{ c.post_comment_author }}</p>
+    {% endfor %}
+  {% else %}
+  <p> No comments posted </p>
+  {% endif %}
+  <form action="{% url 'newcomment' d.pk %}">
+     <button type="submit" id = "comment_btn">Add Comment</button>
+  </form>
+  {% endfor %}
+</ul>
+{% endblock %}

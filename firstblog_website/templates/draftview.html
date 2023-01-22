@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block body_block %}
+
+  {% for d in draftpost %}
+    <ul>
+      <li><h1>{{ d.post_title }}</h1></li>
+      <form class="drafts_main" method="post">
+              {% csrf_token %}
+      <input type="submit" name="Publish" value="Publish"></input>
+        </form>
+      <li><h4>{{ d.post_text }}</h4></li>
+      <a href="{% url 'editpost' d.pk %}"><button class="btn"><i class="fa fa-edit"></i></button></a>
+      <a href="{% url 'deletepost' d.pk %}"><button class="btn"><i class="fa fa-remove"></i></button></a>
+    </ul>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+<h1>I am home</h1>
+
+{% block body_block %}
+
+<div class="home_main">
+  <ul>
+    <div class="login">
+
+    </div>
+      {% for d in postslist %}
+        <li>
+          <h1><a href="{% url 'post' d.pk %}">{{ d.post_title }}</a></h1>
+        </li>
+        <li>
+          <h3>
+            {{ d.post_text }}
+          </h3>
+        </li>
+        {% endfor %}
+  </ul>
+
+</div>
+
+
+{% endblock %}

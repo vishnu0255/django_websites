@@ -1,0 +1,104 @@
+body {
+	background-image: url(https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+}
+li {
+	list-style: none;
+	display: inline;
+}
+.home_class {
+	font-family: Arial, Times, serif;
+	background-color: #778899;
+	border: 2px solid #778899;
+	border-style: groove;
+	border-radius: 5px;
+	padding: 10px;
+	font-weight: bold;
+	font-size: 25px;
+	font-stretch: extra-expanded;
+	color: black;
+
+}
+.home_class a {
+	color: black;
+}
+a:link {
+	text-decoration: none;
+}
+a {
+	color: green;
+}
+#title {
+	color: #00b300;
+	font-weight: 200px;
+	font-family: monospace;
+	font-size: 25px;
+}
+#date {
+	color: blue;
+	font-weight: bold;
+	font-variant: inherit;
+	font-style: normal;
+}
+#comment {
+	color: red;
+	font-weight: bold;
+	font-variant: inherit;
+	font-style: normal;
+}
+h2 {
+  font-size: 30px;
+}
+h2 {
+  color: green;
+}
+.base_class {
+	display: inline-block;
+	width:  500px;
+}
+
+.login_class {
+display: inline-block;
+float: right;
+padding-right: 40px;
+}
+
+.login_class li {
+	border: 5px solid #778899;
+}
+.base_class li {
+	border: 5px solid #778899;
+}
+.login_page_class {
+		margin-left: 50px;
+		margin-top: 10px;
+		background-color: #b3b3cc;
+		border: 2px solid #b3b3cc;
+		border-style: groove;
+	  border-radius: 5px;
+		width: 450px;
+		padding-left: 80px;
+		padding-top: 60px;
+		padding-bottom: 60px;
+}
+#login_button {
+	background-color: pink;
+	border: 5px groove pink;
+}
+.btn {
+	background-color: #6F3096;
+	border-color: #6F3096;
+	color: white;
+	padding: 5px;
+	width: 35px;
+	border-radius: 3px;
+}
+#comment_btn {
+	margin-top: 30px;
+	margin-left: 600px;
+	background-color: #6F3096;
+	border-color: #6F3096;
+	color: white;
+	padding: 5px;
+	width: 150px;
+	border-radius: 3px;
+}
